@@ -10,9 +10,6 @@ def action():
     op.add_argument("--no-sandbox")
     op.add_argument("--disable-dev-sh-usage")
 
-
-
-    count=0
     for i in range(1000):
         driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
         driver.get("https://aerotim.ro/")
@@ -25,12 +22,10 @@ def action():
         alege_dublin.click()
         time.sleep(2)
         vote.click()
-        time.sleep(4)
-        driver.close()
-        count+=1
-        print(count)
+        time.sleep(10)
 
-schedule.every().day.at("02:40").do(action)
+
+schedule.every().day.at("03:00").do(action)
 
 while True:
 
