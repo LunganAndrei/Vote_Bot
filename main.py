@@ -10,10 +10,11 @@ def action():
     op.add_argument("--no-sandbox")
     op.add_argument("--disable-dev-sh-usage")
 
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),chrome_options=op)
+
 
     count=0
     for i in range(1000):
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
         driver.get("https://aerotim.ro/")
 
         alege_destinatia=driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[1]/div[1]/button")
@@ -29,9 +30,11 @@ def action():
         count+=1
         print(count)
 
-schedule.every().day.at("02:02").do(action)
+schedule.every().day.at("02:19").do(action)
 
 while True:
 
     schedule.run_pending()
     time.sleep(1)
+
+# cod to run BOT_AIRPORT>heroku run python main.py
