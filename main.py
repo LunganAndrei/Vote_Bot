@@ -30,7 +30,7 @@ def action():
         count+=1
         print(count)
 
-schedule.every().day.at("02:19").do(action)
+schedule.every().day.at("02:40").do(action)
 
 while True:
 
