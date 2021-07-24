@@ -7,6 +7,7 @@ op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 op.add_argument("--headless")  # don t open a window
 op.add_argument("--no-sandbox")
 op.add_argument("--disable-dev-shm-usage")
+count =0
 while True:
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
     driver.get("https://aerotim.ro/")
@@ -20,6 +21,8 @@ while True:
     time.sleep(2)
     vote.click()
     time.sleep(10)
+    count +=1
+    print(count)
 
 
 
