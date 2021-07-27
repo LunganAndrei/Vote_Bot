@@ -25,7 +25,7 @@ while True:
     vote.click()
     count += 1
     print(count)
-    time.sleep(10)
+    time.sleep(3)
 
 
 
